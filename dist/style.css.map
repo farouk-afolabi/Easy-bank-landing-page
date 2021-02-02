@@ -6,6 +6,7 @@
         "_variables.scss",
         "_globals.scss",
         "_header.scss"
+        
     ],
     "names": [],
     "file": "style.css"
