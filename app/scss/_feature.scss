@@ -22,10 +22,10 @@
 
     &__item {
 
-        padding: .9375rem;
+        padding: 0.9375rem;
 
         @include breakpoint-up(medium) {
-            flex: 0 0 50%;
+            flex: 1 0 50%;
         }
 
         @include breakpoint-up(large) {
@@ -43,12 +43,13 @@
 
     &__title {
         font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 1.15;
+        color: $darkBlue;
         margin-bottom: 1rem;
+       
         @include breakpoint-up(large) {
             font-size: 1.5rem;
-            font-weight: 300;
-            color: $darkBlue;
-            line-height: 1.15;
             margin-bottom: 1.5rem;
         }
     }

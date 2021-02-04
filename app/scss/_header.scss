@@ -1,19 +1,22 @@
-header ,.header, #header {  
+.header {  
+    position: relative; 
+    z-index: 1;
+
 
     
     
         //hamburger animation
         &.open {
             .header__toggle {
-                >span:first-child {
+                > span:first-child {
                     transform: rotate(45deg);
                 }
     
-                >span:nth-child(2) {
+                > span:nth-child(2) {
                     opacity: 0;
                 }
     
-                >span:last-child {
+                > span:last-child {
                     transform: rotate(-45deg);
     
                 }
@@ -28,15 +31,23 @@ header ,.header, #header {
             bottom: 0;
             left: 0;
             background-image: linear-gradient($darkBlue, transparent);
-            
+
+            &.fade-in {
+                display: block;
+            }
+           /* &.fade-out {
+                display: none;
+            }
+            */
         }
 
 
     nav {
         position: relative;
         background-color: $white;
-        padding: 1.0625rem  1.5rem;
-        z-index: 2;
+        padding-top: 1.0625rem  ;
+        padding-bottom: 0px ;
+        
     }
 
     &__logo {
@@ -46,7 +57,7 @@ header ,.header, #header {
         }
     }
     
-    &__toggle { // Mobile Menu 
+    &__toggle { // Mobile Menu Toggle
         cursor: pointer;
 
         > span {
@@ -69,21 +80,23 @@ header ,.header, #header {
         position: absolute;
         background: $white;
         padding: 1.625rem;
-        margin-top: 1.5rem;
+        margin-top:  1.5rem;
         width: calc(100% - 3rem);
         border-radius: 5px;
         left: 50%;
         transform: translateX(-50%);
+        
 
         a {
-            color: $darkBlue;
-            padding: .625rem;
             display: block;
+            padding: 0.625rem;
             text-align: center;
+            color: $darkBlue;
         }
     }
     
     &__links {
+        
         a {
             position:relative;
             font-size: $font-sm;
@@ -117,9 +130,4 @@ header ,.header, #header {
         }
     }
 
-    &__cta {
-        font-size: $font-sm ;
-        color: $white;
-        transition: opacity 300ms ease-in-out;
-    }
 }

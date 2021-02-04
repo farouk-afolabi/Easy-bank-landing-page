@@ -11,10 +11,12 @@
             justify-items: start;
             grid-template-columns: 2fr 1fr 1fr 3fr;
             grid-template-rows: 1fr auto;
+            gap: 1rem;
             grid-template-areas:
                 "logo links1 links2 cta"
                 "social links1 links2 copyright";
-            gap: 1rem;
+            align-items: stretch;
+            
         }
     }
 
@@ -23,8 +25,13 @@
     }
 
     &__logo {
-        display: block;
-        margin-bottom: 1.875rem;
+        display: inline-block;
+       
+        
+        @include breakpoint-down(medium) {
+            margin-bottom: 1.875rem;
+           
+        }
         @include breakpoint-up(large) {
             grid-area: logo;
         }
@@ -43,13 +50,15 @@
             align-self: end;
         }
 
-        svg path {
-            transition: fill 150ms ease-in-out;
-        }
+        
 
         a {
             display: inline-block;
             height: 1.25rem;
+
+            svg path {
+                transition: fill 150ms ease-in-out;
+            }
 
             &:hover svg path {
                 fill: $limeGreen;
@@ -69,7 +78,7 @@
 
         @include breakpoint-up(large) {
             align-items: start;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         &.col1 {
@@ -92,7 +101,7 @@
 
         a {
             line-height: 2.25;
-            transition: fill 150ms ease-in-out;
+            transition: color 150ms ease-in-out;
 
             &:hover {
                 color: $limeGreen;
@@ -106,6 +115,7 @@
             grid-area: cta;
             justify-self: end;
             text-align: right;
+            align-self: stretch;
         }
 
         a.button {
@@ -119,17 +129,14 @@
 
     &__copyright {
         font-size: 0.8125rem;
+        color: $grayishBlue;
 
         @include breakpoint-up(large) {
             grid-area: copyright;
             justify-self: end;
             align-self: end;
         }
-        a{
-            &:hover {
-                color: $limeGreen;
-            }
-        }
+        
     }
 
 }
